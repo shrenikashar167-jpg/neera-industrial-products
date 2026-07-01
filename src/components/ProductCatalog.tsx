@@ -218,7 +218,7 @@ export default function ProductCatalog() {
       {/* Lab Chemical Specification Modal (Overlay Modal) */}
       <AnimatePresence>
         {selectedProduct && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 sm:p-6 overflow-y-auto">
             {/* Backdrop Blur overlay */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -233,13 +233,13 @@ export default function ProductCatalog() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-2xl bg-white rounded-3xl border border-brand-border/10 p-6 md:p-8 shadow-[0_30px_70px_rgba(0,0,0,0.5)] z-10"
+              className="relative w-full max-w-2xl bg-white rounded-3xl border border-brand-border/10 p-6 md:p-8 shadow-[0_30px_70px_rgba(0,0,0,0.5)] z-10 my-8 sm:my-0"
               id="product-detail-modal"
             >
               {/* Close button */}
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-4 right-4 p-2.5 rounded-full bg-brand-light-bg hover:bg-brand-primary hover:text-white transition-all text-brand-primary cursor-pointer"
+                className="absolute top-4 right-4 p-2.5 rounded-full bg-brand-light-bg hover:bg-brand-primary hover:text-white transition-all text-brand-primary cursor-pointer z-30 shadow-md"
                 aria-label="Close details"
               >
                 <X className="w-5 h-5" />
