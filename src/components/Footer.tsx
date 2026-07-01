@@ -95,7 +95,7 @@ export default function Footer() {
                   onClick={() => scrollToSub('products')}
                   className="hover:text-white hover:translate-x-1 duration-200 transition-all cursor-pointer block text-left"
                 >
-                  Pure Fabric Care
+                  Spotting Agents
                 </button>
               </li>
               <li>
@@ -133,10 +133,10 @@ export default function Footer() {
             <ul className="space-y-3 font-sans text-xs text-brand-border/80">
               <li>
                 <button
-                  onClick={() => scrollToSub('products')}
+                  onClick={() => scrollToSub('about')}
                   className="hover:text-white hover:translate-x-1 duration-200 transition-all cursor-pointer block text-left"
                 >
-                  Material Safety Data Sheets (MSDS)
+                  Company Profile
                 </button>
               </li>
               <li>

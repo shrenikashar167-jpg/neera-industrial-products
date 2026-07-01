@@ -5,7 +5,7 @@ import { ArrowUpRight, X, FlaskConical, Settings, Edit, Copy, RefreshCw } from '
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function ProductCatalog() {
-  const [activeCategory, setActiveCategory] = useState<'All' | 'Fabric Care' | 'Industrial'>('All');
+  const [activeCategory, setActiveCategory] = useState<'All' | 'Spotting Agents' | 'Industrial'>('All');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   // Stateful list of products with local storage overrides
@@ -30,11 +30,12 @@ export default function ProductCatalog() {
   // Filter products by UI tabs
   const filteredProducts = productsList.filter((p) => {
     if (activeCategory === 'All') return true;
-    if (activeCategory === 'Fabric Care') {
-      return p.category === 'Fabric Care' || p.category === 'Multi-Purpose' || p.category === 'Specialty' || p.category === 'White Fabrics';
+    const spottingAgentIds = ['nirol-a', 'nirol-b', 'nirol-cc', 'nirol-r', 'nirol-sp'];
+    if (activeCategory === 'Spotting Agents') {
+      return spottingAgentIds.includes(p.id);
     }
     if (activeCategory === 'Industrial') {
-      return p.category === 'Stain Removal' || p.category === 'Specialty' || p.category === 'White Fabrics';
+      return !spottingAgentIds.includes(p.id);
     }
     return true;
   });
@@ -86,7 +87,7 @@ export default function ProductCatalog() {
 
           {/* Filtering Tabs */}
           <div className="flex items-center gap-1.5 sm:gap-3 bg-white p-1.5 rounded-full border border-brand-border/30 shadow-sm w-full sm:w-auto justify-between sm:justify-start">
-            {(['All', 'Fabric Care', 'Industrial'] as const).map((cat) => (
+            {(['All', 'Spotting Agents', 'Industrial'] as const).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
