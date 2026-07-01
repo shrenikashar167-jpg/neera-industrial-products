@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+
+  --color-brand-primary: #001e40;
+  --color-brand-dark-blue: #001226;
+  --color-brand-accent-teal: #009b9e;
+  --color-brand-accent-pink: #ec4899;
+  --color-brand-accent-purple: #8b5cf6;
+  --color-brand-light-bg: #f8f9fa;
+  --color-brand-md-grey: #50606f;
+  --color-brand-blue-container: #003366;
+  --color-brand-border: #c3c6d1;
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float-slow-1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1.5deg); }
+}
+
+@keyframes float-slow-2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(15px) rotate(-1.5deg); }
+}
+
+.animate-scroll-marquee {
+  animation: scroll-marquee 25s linear infinite;
+}
+
+.animate-float-1 {
+  animation: float-slow-1 7s infinite ease-in-out;
+}
+
+.animate-float-2 {
+  animation: float-slow-2 8s infinite ease-in-out;
+}
+
+/* Custom scroll bar for clean aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #001e40;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #003366;
+}
+
+@keyframes bounce-horizontal {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+.animate-bounce-horizontal {
+  animation: bounce-horizontal 1.2s infinite ease-in-out;
+}
+
