@@ -76,7 +76,7 @@ export default function ProductCatalog() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="space-y-3">
             <span className="text-brand-primary uppercase tracking-[0.2em] font-display font-bold text-xs">
-              Product Catalog
+              Product Catalogue
             </span>
             <h2 className="text-3xl md:text-4xl font-display font-extrabold text-brand-primary tracking-tight">
               Elegant Product Showcase
@@ -85,18 +85,18 @@ export default function ProductCatalog() {
           </div>
 
           {/* Filtering Tabs */}
-          <div className="flex flex-wrap gap-3 bg-white p-2.5 rounded-full border border-brand-border/30 shadow-sm">
+          <div className="flex items-center gap-1.5 sm:gap-3 bg-white p-1.5 rounded-full border border-brand-border/30 shadow-sm w-full sm:w-auto justify-between sm:justify-start">
             {(['All', 'Fabric Care', 'Industrial'] as const).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`py-2 px-6 rounded-full font-display font-semibold text-xs tracking-wider transition-all cursor-pointer ${
+                className={`py-2 px-3 sm:px-6 rounded-full font-display font-semibold text-[10px] sm:text-xs tracking-wider transition-all cursor-pointer whitespace-nowrap ${
                   activeCategory === cat
                     ? 'bg-brand-primary text-white shadow-md'
                     : 'text-brand-md-grey hover:text-brand-primary hover:bg-brand-light-bg'
                 }`}
               >
-                {cat === 'All' ? 'All Products' : cat}
+                {cat === 'All' ? 'All' : cat}
               </button>
             ))}
           </div>

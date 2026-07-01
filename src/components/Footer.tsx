@@ -87,7 +87,7 @@ export default function Footer() {
           {/* Product Catalog Direct Jumps */}
           <div className="space-y-6">
             <h6 className="text-brand-accent-teal font-display font-bold text-xs uppercase tracking-wider">
-              Product Catalog
+              Product Catalogue
             </h6>
             <ul className="space-y-3 font-sans text-xs text-brand-border/80">
               <li>
